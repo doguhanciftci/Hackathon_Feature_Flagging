@@ -1,4 +1,4 @@
-﻿namespace Hackathon_Feature_Flagging.Models
+﻿namespace Hackathon_Feature_Flagging.Domain
 {
     public enum WeatherForecastServiceTypes
     {

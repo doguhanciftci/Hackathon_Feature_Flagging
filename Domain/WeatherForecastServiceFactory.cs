@@ -1,6 +1,6 @@
-﻿using Hackathon_Feature_Flagging.Models;
+﻿using Hackathon_Feature_Flagging.Domain.Services;
 
-namespace Hackathon_Feature_Flagging.Services
+namespace Hackathon_Feature_Flagging.Domain
 {
     public class WeatherForecastServiceFactory
     {
