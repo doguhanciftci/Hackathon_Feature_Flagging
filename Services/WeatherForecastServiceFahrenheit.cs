@@ -20,7 +20,7 @@ namespace Hackathon_Feature_Flagging.Services
                 return new WeatherForecast
                 {
                     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Temperature = ((temperatuInCelcius / 0.5556) + 32).ToString() + " Fahrenheit",
+                    Temperature = ((temperatuInCelcius / 0.5556) + 32).ToString("N2") + " Fahrenheit",
                     Summary = _summaries[Random.Shared.Next(_summaries.Length)]
                 };
             })

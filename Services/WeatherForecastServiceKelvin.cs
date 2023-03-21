@@ -20,7 +20,7 @@ namespace Hackathon_Feature_Flagging.Services
                 return new WeatherForecast
                 {
                     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Temperature = (temperatuInCelcius + 273.15).ToString() + " Kelvin",
+                    Temperature = (temperatuInCelcius + 273.15).ToString("N2") + " Kelvin",
                     Summary = _summaries[Random.Shared.Next(_summaries.Length)]
                 };
             })
