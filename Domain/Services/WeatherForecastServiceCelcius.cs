@@ -1,12 +1,13 @@
-﻿using Hackathon_Feature_Flagging.Models;
+﻿using Hackathon_Feature_Flagging.Domain;
+using Hackathon_Feature_Flagging.Models;
 
-namespace Hackathon_Feature_Flagging.Services
+namespace Hackathon_Feature_Flagging.Domain.Services
 {
-    public class WeatherForecastServiceFahrenheit : IWeatherForecastService
+    public class WeatherForecastServiceCelcius : IWeatherForecastService
     {
         private readonly string[] _summaries;
 
-        public WeatherForecastServiceFahrenheit(string[] summaries)
+        public WeatherForecastServiceCelcius(string[] summaries)
         {
             _summaries = summaries;
         }
@@ -15,12 +16,13 @@ namespace Hackathon_Feature_Flagging.Services
         {
             var rng = new Random();
 
-            return Enumerable.Range(1, 5).Select(index => {
+            return Enumerable.Range(1, 5).Select(index =>
+            {
                 int temperatuInCelcius = Random.Shared.Next(-20, 55);
                 return new WeatherForecast
                 {
                     Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                    Temperature = ((temperatuInCelcius / 0.5556) + 32).ToString() + " Fahrenheit",
+                    Temperature = temperatuInCelcius.ToString("N2") + " Celcius",
                     Summary = _summaries[Random.Shared.Next(_summaries.Length)]
                 };
             })
